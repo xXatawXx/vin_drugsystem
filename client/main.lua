@@ -28,7 +28,6 @@ end)
 
 Citizen.CreateThread(function()
 	while canSellVar do
---		TriggerServerEvent("vin_drugsystem:canSellDrugs")
 		TriggerServerEvent("vin_drugsystem:canSellDrugsv2")
 		Citizen.Wait(5500)
 	end
