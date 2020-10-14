@@ -3,6 +3,7 @@ local PlayerData            = {}
 
 local sellDrugVar = false
 local Do3DTextToSell = true
+local canSellVar = true
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -26,8 +27,9 @@ AddEventHandler('esx:setJob', function(job)
 end)
 
 Citizen.CreateThread(function()
-	while true do
-		TriggerServerEvent("vin_drugsystem:canSellDrugs")
+	while canSellVar do
+--		TriggerServerEvent("vin_drugsystem:canSellDrugs")
+		TriggerServerEvent("vin_drugsystem:canSellDrugsv2")
 		Citizen.Wait(5500)
 	end
 end)
